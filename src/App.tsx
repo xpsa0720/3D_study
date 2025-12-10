@@ -5,19 +5,24 @@ import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import { CameraControls, OrbitControls } from "@react-three/drei";
 import ThreeElement from "./ThreeElement";
+import MaterialTest from "./MaterialTest";
+import LightTest from "./LightTest";
 
 function App() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-  return (
-    <Canvas camera={{ fov: 75, far: 100, near: 1, position: [5, 5, 5] }}>
-      <CameraControls />
-      {/* <OrbitControls /> */}
-      <gridHelper args={[10, 10]} />
-      <axesHelper args={[10]} />
-      <ThreeElement />
-    </Canvas>
-  );
+    return (
+        <Canvas camera={{ fov: 75, far: 100, near: 1, position: [5, 5, 5] }}>
+            <color attach={"background"} args={["black"]} />
+            <CameraControls />
+            {/* <OrbitControls /> */}
+            {/* <gridHelper args={[10, 10]} /> */}
+            {/* <axesHelper args={[10]} /> */}
+            {/* <ThreeElement /> */}
+            <LightTest />
+            {/* <MaterialTest /> */}
+        </Canvas>
+    );
 }
 
 export default App;
